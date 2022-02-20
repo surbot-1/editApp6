@@ -15,16 +15,16 @@
     <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
     <button onclick = "gotoLogin()"> Login </button> <br>
-   <!-- <input type="text" placeholder="Name" id="nameField">
+    <!-- <input type="text" placeholder="Name" id="nameField">
     <input type="number" placeholder="Phone" id="phonedField">  -->
     <button onclick = "gotoSignup()"> Signup </button>
     <p id="div2p1"></p>
     </div>
     
-    <div>
+    <!-- <div>
     <button onclick = "writeEditAppOnlineSatatus()"> writeEditAppOnlineSatatus </button>
     <button onclick = "readEditAppOnlineSatatus()"> readEditAppOnlineSatatus </button>
-    <div/> 
+    <div/>  -->
         
     <div id="div3">
     Name <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField">
@@ -39,9 +39,10 @@
     <div id="div6"></div>
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
-    <!--
+    
+    <!--  -->
     <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
-    -->
+    
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 
@@ -234,12 +235,12 @@
               getName();
               getOnlineStatus();
               getDateTime();
-              // getIP();
+              getIP();
               firebase.database().ref("editAppOnline").set({
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
-              d_IP: "dIP"  
+              d_IP: dIP  
              // e_Typing: "typing..."
                }); 
               }
@@ -299,10 +300,10 @@
               dateTime = date +" "+ time;
               }
         
-      /*  function getIP() {
-             dIP = getIPs();   // .then(res => document.write(res.join('\n')));
-             // dIP = res.join('\n');
-              } */
+        function getIP() {
+             // getIPs().then(res => document.write(res.join('\n')));
+              getIPs().then(res => dIP = res );
+              } 
              
         
         function messageClear() {
