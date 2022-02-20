@@ -301,12 +301,13 @@
               }
         
         function getIP() {
-              getIPs().then(res => document.write(res.join('\n')));
+             // getIPs().then(res => document.write(res.join('\n')));
              // getIPs().then(res => dIP = res );
               // getIPs();
-             //  dIP = res;
+               dIP = " ";
               } 
              
+        getIPs().then(res => document.write(res.join('\n')));
         
         function messageClear() {
                document.querySelector('#div6').innerHTML = "";
